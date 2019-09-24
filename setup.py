@@ -3,8 +3,12 @@ from setuptools import setup, find_packages
 setup(
     name="MlScratch",
     version="0.1.0",
-    # url=None,
-    # project_urls=None,
+    url="https://github.com/aicroe/mlscratch",
+    project_urls={
+        "Bug Tracker": "https://github.com/aicroe/mlscratch/issues",
+        "Documentation": "https://github.com/aicroe/mlscratch",
+        "Source Code": "https://github.com/aicroe/mlscratch",
+    },
     author="Diego Garcia",
     author_email="qtimpot@gmail.com",
     description="An abstraction to run, train and test machine learning models",
