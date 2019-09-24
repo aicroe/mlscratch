@@ -1,3 +1,4 @@
+"SgdTrainer's module."
 from typing import Tuple, Iterator, Optional
 
 from mlscratch.tensor import Tensor

@@ -1,3 +1,4 @@
+"""RandomMiniBatchGenerator's module."""
 from typing import Iterator, Tuple, List
 import math
 import numpy as np

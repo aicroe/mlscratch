@@ -1,3 +1,4 @@
+"""TrainWatcher's module."""
 from abc import ABC, abstractmethod
 
 

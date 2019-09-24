@@ -1,3 +1,4 @@
+"""ChunkGenerator's module."""
 from typing import Iterator, Tuple
 from abc import ABC, abstractmethod
 

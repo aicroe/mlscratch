@@ -1,3 +1,4 @@
+"""Trainer's module."""
 from typing import Tuple, Optional
 from abc import ABC, abstractmethod
 

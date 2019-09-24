@@ -1,3 +1,4 @@
+"""Model's module."""
 from typing import Tuple, List, Any, Optional
 
 from .arch import Arch

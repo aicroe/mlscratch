@@ -1,3 +1,4 @@
+"""Measurer's module."""
 from typing import Generic, TypeVar
 from abc import abstractmethod
 

@@ -1,3 +1,4 @@
+"""Arch's module."""
 from typing import Tuple
 from abc import ABC, abstractmethod
 

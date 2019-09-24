@@ -1,3 +1,4 @@
+"""SimpleTrainer's module."""
 from typing import Tuple, Optional
 
 from mlscratch.tensor import Tensor

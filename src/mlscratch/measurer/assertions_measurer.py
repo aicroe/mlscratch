@@ -1,9 +1,12 @@
+"""AssertionsMeasurer's module."""
 import numpy as np
 from mlscratch.tensor import Tensor
 from .measurer import Measurer
 
 
 class AssertionsMeasurer(Measurer[float]):
+    """Computes how many times a sample's result was evaluated correctly by
+    comparing the results batch against the expected ones."""
 
     def measure(
             self,
