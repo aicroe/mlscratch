@@ -2,7 +2,7 @@ from typing import Iterator, Tuple, List
 import math
 import numpy as np
 
-from mlbatch.tensor import Tensor
+from mlscratch.tensor import Tensor
 from .chunk_generator import ChunkGenerator
 
 

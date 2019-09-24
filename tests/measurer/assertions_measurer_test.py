@@ -1,7 +1,7 @@
 from unittest import TestCase
 import numpy as np
 
-from mlbatch.measurer import AssertionsMeasurer
+from mlscratch.measurer import AssertionsMeasurer
 
 class AssertionsMeasurerTest(TestCase):
 

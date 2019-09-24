@@ -1,4 +1,4 @@
-from mlbatch.train_watcher import TrainWatcher
+from mlscratch.train_watcher import TrainWatcher
 
 
 class _TrainWatcherRecorder(TrainWatcher):

@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 
 import numpy as np
 
-from mlbatch.trainer import SimpleTrainer
+from mlscratch.trainer import SimpleTrainer
 from ..test_helper import _TrainWatcherRecorder
 
 

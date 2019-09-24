@@ -7,7 +7,7 @@
 * Clone the project
 * Create a dedicated virtual environment
 ```bash
-cd mlbatch
+cd mlscratch
 python3 -m venv python3
 source python3/bin/activate
 ```
@@ -24,7 +24,6 @@ python setup.py test
 
 ## Run linter
 ```bash
-# TODO: it should lint the complete folder
 pylint src
 ```
 The above will output a friendly colorized report, if needed it can be avoided by appending the option: `--output-format=text`

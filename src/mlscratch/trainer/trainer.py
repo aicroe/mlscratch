@@ -1,9 +1,9 @@
 from typing import Tuple, Optional
 from abc import ABC, abstractmethod
 
-from mlbatch.tensor import Tensor
-from mlbatch.trainable import Trainable
-from mlbatch.train_watcher import TrainWatcher
+from mlscratch.tensor import Tensor
+from mlscratch.trainable import Trainable
+from mlscratch.train_watcher import TrainWatcher
 
 
 class Trainer(ABC):

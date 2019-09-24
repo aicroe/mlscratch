@@ -3,7 +3,7 @@ from unittest import TestCase
 from unittest.mock import MagicMock
 import numpy as np
 
-from mlbatch.trainer import SgdTrainer
+from mlscratch.trainer import SgdTrainer
 from ..test_helper import _TrainWatcherRecorder
 
 

@@ -1,5 +1,5 @@
 import numpy as np
-from mlbatch.tensor import Tensor
+from mlscratch.tensor import Tensor
 from .measurer import Measurer
 
 

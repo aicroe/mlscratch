@@ -2,7 +2,7 @@
 from unittest import TestCase
 import numpy as np
 
-from mlbatch.chunk_generator import RandomMiniBatchGenerator
+from mlscratch.chunk_generator import RandomMiniBatchGenerator
 
 
 class RandomMiniBatchGeneratorTest(TestCase):

@@ -1,7 +1,7 @@
 from typing import Generic, TypeVar
 from abc import abstractmethod
 
-from mlbatch.tensor import Tensor
+from mlscratch.tensor import Tensor
 
 
 T = TypeVar('T')

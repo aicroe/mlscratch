@@ -1,7 +1,7 @@
 from typing import Tuple
 from abc import ABC, abstractmethod
 
-from mlbatch.tensor import Tensor
+from mlscratch.tensor import Tensor
 
 
 class Arch(ABC):

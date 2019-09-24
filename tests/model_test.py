@@ -3,9 +3,9 @@ from unittest import TestCase
 from unittest.mock import MagicMock
 import numpy as np
 
-from mlbatch.model import Model
-from mlbatch.trainer import SimpleTrainer, SgdTrainer
-from mlbatch.measurer import AssertionsMeasurer
+from mlscratch.model import Model
+from mlscratch.trainer import SimpleTrainer, SgdTrainer
+from mlscratch.measurer import AssertionsMeasurer
 from .test_helper import _TrainWatcherRecorder
 
 
