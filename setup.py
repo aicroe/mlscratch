@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="MlScratch",
-    version="0.1.0",
+    version="0.1.1",
     url="https://github.com/aicroe/mlscratch",
     project_urls={
         "Bug Tracker": "https://github.com/aicroe/mlscratch/issues",

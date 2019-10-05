@@ -9,11 +9,20 @@ class Arch(ABC):
     """Abstracts a machine learning instance."""
 
     @abstractmethod
+    def train_initialize(self) -> None:
+        """Train hook. Called once before the training has started."""
+
+    @abstractmethod
+    def train_finalize(self) -> None:
+        """Train hook. Called once after the training has finalized."""
+
+    @abstractmethod
     def update_params(
             self,
             dataset: Tensor,
             labels: Tensor) -> Tuple[float, Tensor]:
-        """Updates/Optimizes its trainable parameters."""
+        """Updates/Optimizes its trainable parameters.
+        Called while training to update this instance parameters."""
 
     @abstractmethod
     def evaluate(self, dataset: Tensor) -> Tensor:

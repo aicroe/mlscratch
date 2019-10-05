@@ -93,6 +93,7 @@ class Model():
                                 int, List[float], List[float]]:
         """Trains this model's arch."""
         train_recorder = _TrainRecorder(train_watcher)
+        self._arch.train_initialize()
         epochs, validation_epochs = trainer.train(
             _TrainableArchAdapter(self._arch, measurer),
             dataset,
@@ -102,6 +103,7 @@ class Model():
             train_recorder,
             **options,
         )
+        self._arch.train_finalize()
         return (epochs,
                 train_recorder.costs,
                 train_recorder.accuracies,
@@ -122,11 +124,3 @@ class Model():
         cost, evaluations = self._arch.check_cost(dataset, labels)
         measures = [measurer.measure(evaluations, labels) for measurer in measurers]
         return (cost, measures)
-
-    def restore(self) -> None:
-        """Restors a saved instance."""
-        self._arch = self._arch.restore()
-
-    def save(self) -> None:
-        """Saves an instance."""
-        self._arch.save()

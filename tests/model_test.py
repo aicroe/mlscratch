@@ -43,22 +43,25 @@ class ModelTest(TestCase):
 
         self.assertEqual(results, [56.9, 70.1])
 
-    def test_restore_assert_arch_gets_called(self):
+    def test_train_assert_hooks_are_called(self):
         arch = MagicMock()
         model = Model(arch)
+        trainer = MagicMock()
+        trainer.train.return_value = (None, None)
 
-        model.restore()
+        model.train(
+            None,
+            None,
+            None,
+            None,
+            trainer,
+            None,
+            None,
+            epochs=0,
+        )
 
-        self.assertEqual(arch.restore.call_count, 1)
-
-    def test_save_assert_arch_gets_called(self):
-        arch = MagicMock()
-        model = Model(arch)
-
-        model.save()
-
-        self.assertEqual(arch.save.call_count, 1)
-
+        self.assertEqual(arch.train_initialize.call_count, 1)
+        self.assertEqual(arch.train_finalize.call_count, 1)
 
 class ModelAndSimpleTrainerIntegrationTest(TestCase):
 
