@@ -1,1 +1,2 @@
 from .train_watcher_recorder import _TrainWatcherRecorder
+from .playback_trainable import _PlaybackTrainable

@@ -253,7 +253,7 @@ class SgdTrainerTest(TestCase):
         self.assertEqual(trainable.update_params.call_count, 11)
         self.assertEqual(trainable.evaluate_validation_set.call_count, 3)
 
-    def test_train_assert_data_is_passed(self):
+    def test_train_assert_data_is_passed_and_shuffled(self):
         trainer = SgdTrainer()
         trainable = MagicMock()
         trainable.update_params.return_value = (0.09, 100)
