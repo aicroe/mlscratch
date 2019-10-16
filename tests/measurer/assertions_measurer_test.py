@@ -1,12 +1,13 @@
+"""ProbsMeasurer's test suit."""
 from unittest import TestCase
 import numpy as np
 
-from mlscratch.measurer import AssertionsMeasurer
+from mlscratch.measurer import ProbsMeasurer
 
-class AssertionsMeasurerTest(TestCase):
+class ProbsMeasurerTest(TestCase):
 
     def test_measure_with_matrix_like_data_assert_all_match_expected(self):
-        measurer = AssertionsMeasurer()
+        measurer = ProbsMeasurer()
 
         result = measurer.measure(
             np.array([
@@ -24,7 +25,7 @@ class AssertionsMeasurerTest(TestCase):
         self.assertEqual(result, 1)
 
     def test_measure_with_matrix_like_data_assert_none_match_expected(self):
-        measurer = AssertionsMeasurer()
+        measurer = ProbsMeasurer()
 
         result = measurer.measure(
             np.array([
@@ -42,7 +43,7 @@ class AssertionsMeasurerTest(TestCase):
         self.assertEqual(result, 0)
 
     def test_measure_with_matrix_like_data_assert_some_math_expected(self):
-        measurer = AssertionsMeasurer()
+        measurer = ProbsMeasurer()
 
         result = measurer.measure(
             np.array([

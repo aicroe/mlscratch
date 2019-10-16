@@ -5,7 +5,7 @@ import numpy as np
 
 from mlscratch import Model
 from mlscratch.trainer import SimpleTrainer
-from mlscratch.measurer import AssertionsMeasurer
+from mlscratch.measurer import ProbsMeasurer
 from ..test_helper import _TrainWatcherRecorder
 
 
@@ -191,7 +191,7 @@ class ModelAndSimpleTrainerIntegrationTest(TestCase):
             None,
             None,
             trainer,
-            AssertionsMeasurer(),
+            ProbsMeasurer(),
             None,
             epochs=7,
         )
@@ -229,7 +229,7 @@ class ModelAndSimpleTrainerIntegrationTest(TestCase):
                 [-8, 0, 6.66],
             ]),
             trainer,
-            AssertionsMeasurer(),
+            ProbsMeasurer(),
             None,
             epochs=8,
             validation_gap=4,

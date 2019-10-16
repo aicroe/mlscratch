@@ -5,7 +5,7 @@ import numpy as np
 
 from mlscratch import Model
 from mlscratch.trainer import SgdEarlyStopTrainer
-from mlscratch.measurer import AssertionsMeasurer
+from mlscratch.measurer import ProbsMeasurer
 from ..test_helper import _TrainWatcherRecorder, _PlaybackArch
 
 
@@ -144,7 +144,7 @@ class ModelAndSgdEarlyStopTrainerIntegrationTest(TestCase):
             np.array([[1], [2]]),
             np.array([[0, 1], [0, 1]]),
             SgdEarlyStopTrainer(),
-            AssertionsMeasurer(),
+            ProbsMeasurer(),
             train_watcher,
             epochs=3,
             validation_gap=1,

@@ -1,15 +1,15 @@
-"""Model and AssertionsMeasurer integration tests suit."""
+"""Model and ProbsMeasurer integration tests suit."""
 from unittest import TestCase
 from unittest.mock import MagicMock
 import numpy as np
 
 from mlscratch import Model
-from mlscratch.measurer import AssertionsMeasurer
+from mlscratch.measurer import ProbsMeasurer
 from mlscratch.trainer import SimpleTrainer
 from ..test_helper import _TrainWatcherRecorder
 
 
-class ModelAndAssertionsMeasurerIntegrationTest(TestCase):
+class ModelAndProbsMeasurerIntegrationTest(TestCase):
 
     def test_measure_with_one_measurer_check_returned(self):
         arch = MagicMock()
@@ -30,7 +30,7 @@ class ModelAndAssertionsMeasurerIntegrationTest(TestCase):
                 [3, 2, 1],
                 [3, 22, 0],
             ]),
-            [AssertionsMeasurer()],
+            [ProbsMeasurer()],
         )
 
         self.assertEqual(measures, [2/3])
@@ -57,9 +57,9 @@ class ModelAndAssertionsMeasurerIntegrationTest(TestCase):
                 [-1, 0, 3],
             ]),
             [
-                AssertionsMeasurer(),
-                AssertionsMeasurer(),
-                AssertionsMeasurer(),
+                ProbsMeasurer(),
+                ProbsMeasurer(),
+                ProbsMeasurer(),
             ],
         )
 
@@ -101,7 +101,7 @@ class ModelAndAssertionsMeasurerIntegrationTest(TestCase):
                 [11, 21, 0.5],
             ]),
             trainer,
-            AssertionsMeasurer(),
+            ProbsMeasurer(),
             recorder,
             epochs=7,
             validation_gap=1,

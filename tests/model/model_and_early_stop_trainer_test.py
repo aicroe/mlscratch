@@ -5,7 +5,7 @@ import numpy as np
 
 from mlscratch import Model
 from mlscratch.trainer import EarlyStopTrainer
-from mlscratch.measurer import AssertionsMeasurer
+from mlscratch.measurer import ProbsMeasurer
 from ..test_helper import _TrainWatcherRecorder, _PlaybackArch
 
 
@@ -134,7 +134,7 @@ class ModelAndEarlyStopIntegrationTest(TestCase):
             None,
             np.array([[0, 1], [1, 0]]),
             EarlyStopTrainer(),
-            AssertionsMeasurer(),
+            ProbsMeasurer(),
             train_watcher,
             epochs=3,
             validation_gap=1,

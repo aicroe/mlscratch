@@ -1,12 +1,12 @@
-"""AssertionsMeasurer's module."""
+"""ProbsMeasurer's module."""
 import numpy as np
 from mlscratch.tensor import Tensor
 from .measurer import Measurer
 
 
-class AssertionsMeasurer(Measurer[float]):
-    """Computes how many times a sample's result was evaluated correctly by
-    comparing the results batch against the expected ones."""
+class ProbsMeasurer(Measurer[float]):
+    """Computes how many samples were evaluated correctly by
+    getting the most probable label/index in the probability array."""
 
     def measure(
             self,
