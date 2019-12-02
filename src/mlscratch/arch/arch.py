@@ -8,11 +8,9 @@ from mlscratch.tensor import Tensor
 class Arch(ABC):
     """Abstracts a machine learning instance."""
 
-    @abstractmethod
     def train_initialize(self) -> None:
         """Train hook. Called once before the training has started."""
 
-    @abstractmethod
     def train_finalize(self) -> None:
         """Train hook. Called once after the training has finalized."""
 
