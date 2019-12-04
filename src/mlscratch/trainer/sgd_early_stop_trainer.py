@@ -29,6 +29,9 @@ def _run_epoch_with_minibatches(
 class SgdEarlyStopTrainer(Trainer):
     """Stochastic Gradient Descent Trainer."""
 
+    def __init__(self, patience=5):
+        self._patience = patience
+
     def train(
             self,
             trainable: Trainable,
@@ -42,7 +45,7 @@ class SgdEarlyStopTrainer(Trainer):
         epochs: int = options.get('epochs', 0)
         validation_gap: int = options.get('validation_gap', 0)
         minibatch_size: int = options.get('minibatch_size', batch_size)
-        patience: int = options.get('patience', 5)
+        patience: int = options.get('patience', self._patience)
         minibatch_generator = RandomMiniBatchGenerator(options.get('seed', None))
 
         validation_epochs = 0

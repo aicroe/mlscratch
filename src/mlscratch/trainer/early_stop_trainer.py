@@ -12,6 +12,9 @@ class EarlyStopTrainer(Trainer):
     """Model optimizer, implements regular Gradient Descent algorithm
     plus Early Stop regularization."""
 
+    def __init__(self, patience=5):
+        self._patience = patience
+
     def train(
             self,
             trainable: Trainable,
@@ -23,7 +26,7 @@ class EarlyStopTrainer(Trainer):
             **options) -> Tuple[int, int]:
         epochs: int = options.get('epochs', 0)
         validation_gap: int = options.get('validation_gap', 0)
-        patience: int = options.get('patience', 5)
+        patience: int = options.get('patience', self._patience)
 
         validation_epochs = 0
         iterations_failing = 0
