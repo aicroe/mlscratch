@@ -27,7 +27,6 @@ class Arch(ABC):
         """Runs this instance with the given dataset as
         input and returns the results."""
 
-    @abstractmethod
     def check_cost(
             self,
             dataset: Tensor,

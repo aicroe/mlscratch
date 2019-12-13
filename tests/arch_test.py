@@ -11,9 +11,6 @@ class _MockArch(Arch):
     def evaluate(self, dataset):
         pass
 
-    def check_cost(self, dataset, labels):
-        pass
-
 
 class ArchTest(TestCase):
 
@@ -26,3 +23,8 @@ class ArchTest(TestCase):
         arch = _MockArch()
 
         self.assertIsNone(arch.train_finalize())
+
+    def test_check_cost_is_optional_to_overwrite(self):
+        arch = _MockArch()
+
+        self.assertIsNone(arch.check_cost(None, None))
