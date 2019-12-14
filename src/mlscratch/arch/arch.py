@@ -8,11 +8,9 @@ from mlscratch.tensor import Tensor
 class Arch(ABC):
     """Abstracts a machine learning instance."""
 
-    @abstractmethod
     def train_initialize(self) -> None:
         """Train hook. Called once before the training has started."""
 
-    @abstractmethod
     def train_finalize(self) -> None:
         """Train hook. Called once after the training has finalized."""
 
@@ -29,7 +27,6 @@ class Arch(ABC):
         """Runs this instance with the given dataset as
         input and returns the results."""
 
-    @abstractmethod
     def check_cost(
             self,
             dataset: Tensor,

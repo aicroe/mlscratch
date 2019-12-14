@@ -350,3 +350,34 @@ class SgdEarlyStopTrainerTest(TestCase):
             validation_labels,
             np.array([0, 0]),
         ))
+
+    def test_default_patience_can_be_set_in_the_constructor(self):
+        trainer = SgdEarlyStopTrainer(1)
+        trainable = _PlaybackTrainable(
+            [0.1] * 9,
+            [90.0] * 9,
+            [0.1, 0.2, 0.05],
+            [89.0] * 3,
+        )
+        train_watcher = _TrainWatcherRecorder()
+
+        (epochs, validation_epochs) = trainer.train(
+            trainable,
+            np.array([3, 2, 1]),
+            np.array([1, 1, 0]),
+            None,
+            None,
+            train_watcher,
+            epochs=3,
+            validation_gap=1,
+            minibatch_size=1,
+        )
+
+        self.assertEqual(epochs, 2)
+        self.assertEqual(validation_epochs, 2)
+        self.assertEqual(train_watcher.epochs, list(range(2)))
+        self.assertEqual(train_watcher.costs, [0.1] * 2)
+        self.assertEqual(train_watcher.accuracies, [90.0] * 2)
+        self.assertEqual(train_watcher.validation_epochs, list(range(2)))
+        self.assertEqual(train_watcher.validation_costs, [0.1, 0.2])
+        self.assertEqual(train_watcher.validation_accuracies, [89.0] * 2)
